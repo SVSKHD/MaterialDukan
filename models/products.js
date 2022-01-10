@@ -2,8 +2,9 @@ const Mongoose = require("mongoose")
 const {ObjectId} = Mongoose.Schema
 
 const productSchema = new Mongoose.Schema({
-    title:"String",
-    subTitle:"String",
+    title:String,
+    subTitle:String,
+    slug:String,
     descrption:{
         type:String,
         maxlength:300

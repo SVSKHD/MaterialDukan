@@ -1,6 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const Mongoose = require("mongoose")
+const Cors = require("cors")
 require("dotenv").config()
 const Morgan = require("morgan")
 const {readdirSync} = require("fs")
@@ -10,6 +11,7 @@ const {readdirSync} = require("fs")
 const App = express()
 App.use(bodyParser.json())
 App.use(Morgan("dev"))
+App.use(Cors())
 
 // serverroutes
 readdirSync("./routes").map((r) => App.use("/api", require("./routes/" + r)));

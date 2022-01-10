@@ -11,12 +11,13 @@ exports.create = async (req,res) => {
 };
 
 exports.getAll =async (req,res) => {
-  const Categories = await Category.find()
+  const Categories = await Category.find({})
   res.json(Categories)
 };
 
 exports.getCategory = (req,res) => {
-
+const {name} = req.body
+const SingleCategory =  Category.find({})
 };
 
 exports.update = async (req,res) => {
