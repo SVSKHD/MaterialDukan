@@ -1,7 +1,7 @@
 const Product = require("../models/products")
 
-exports.create = () =>{
-
+exports.create = (req,res) =>{
+const {title , subtitle , description , price , note , category , keywords} = req.body
 }
 
 exports.getAll = () =>{

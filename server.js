@@ -18,8 +18,12 @@ readdirSync("./routes").map((r) => App.use("/api", require("./routes/" + r)));
 
 
 // database
-Mongoose.connect(process.env.Database).then(()=>{
+const Database = Mongoose.connect(process.env.Database).then(()=>{
     console.log("Database is Connected")
+})
+
+App.get("/api/database",(req,res)=>{
+    res.json({"Database": "Database is connected"})
 })
 
 
